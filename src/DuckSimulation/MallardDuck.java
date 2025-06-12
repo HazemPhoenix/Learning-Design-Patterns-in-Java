@@ -1,3 +1,5 @@
+package DuckSimulation;
+
 public class MallardDuck extends Duck {
     public MallardDuck() {
         this.setFlyBehavior(new FlyWithWings());

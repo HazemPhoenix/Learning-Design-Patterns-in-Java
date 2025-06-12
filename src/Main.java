@@ -1,5 +1,8 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import DuckSimulation.Duck;
+import DuckSimulation.MallardDuck;
+import DuckSimulation.RubberDuck;
+import DuckSimulation.Squeak;
+
 public class Main {
     public static void main(String[] args) {
         Duck mallardDuck = new MallardDuck();

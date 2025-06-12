@@ -1,3 +1,5 @@
+package DuckSimulation;
+
 public abstract class Duck {
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;
@@ -22,6 +24,6 @@ public abstract class Duck {
     }
 
     public void swim() {
-        System.out.println("Duck swim");
+        System.out.println("DuckSimulation.Duck swim");
     }
 }
