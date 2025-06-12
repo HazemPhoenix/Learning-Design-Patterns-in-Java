@@ -1,4 +1,6 @@
 import DuckSimulation.*;
+import MedievalFights.*;
+import MedievalFights.Character;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,18 +8,34 @@ public class Main {
         Duck rubberDuck = new RubberDuck();
         Duck modelDuck = new ModelDuck();
 
-        mallardDuck.performFly();
-        rubberDuck.performFly();
-        modelDuck.performFly();
+//        mallardDuck.performFly();
+//        rubberDuck.performFly();
+//        modelDuck.performFly();
+//
+//        mallardDuck.performQuack();
+//        rubberDuck.performQuack();
+//        modelDuck.performQuack();
+//
+//        mallardDuck.setQuackBehavior(new Squeak());
+//        mallardDuck.performQuack();
+//
+//        modelDuck.setFlyBehavior(new FlyRocketPowered());
+//        modelDuck.performFly();
 
-        mallardDuck.performQuack();
-        rubberDuck.performQuack();
-        modelDuck.performQuack();
+//        DuckCall dc = new DuckCall();
+//        dc.performQuack();
+//
+//        dc.setQuackBehavior(new Squeak());
+//        dc.performQuack();
 
-        mallardDuck.setQuackBehavior(new Squeak());
-        mallardDuck.performQuack();
+        Character knight = new Knight();
+        knight.attack();
+        knight.setWeapon(new Spear());
+        knight.attack();
 
-        modelDuck.setFlyBehavior(new FlyRocketPowered());
-        modelDuck.performFly();
+        Character archer = new Archer();
+        archer.attack();
+        archer.setWeapon(new Axe());
+        archer.attack();
     }
 }
