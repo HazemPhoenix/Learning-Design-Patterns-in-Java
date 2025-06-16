@@ -6,6 +6,11 @@ public class WeatherData implements Subject {
     private float temp;
     private float humidity;
     private float pressure;
+    private WeatherData weatherData;
+
+    public WeatherData(WeatherData weatherData) {
+        this.weatherData = weatherData;
+    }
 
     List<Observer> subscribers;
 
