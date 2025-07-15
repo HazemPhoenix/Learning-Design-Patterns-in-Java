@@ -1,6 +1,7 @@
 import DuckSimulation.*;
 import MedievalFights.*;
 import MedievalFights.Character;
+import Starbuzz.*;
 import WeatherORama.*;
 
 public class Main {
@@ -39,14 +40,25 @@ public class Main {
 //        archer.setWeapon(new Axe());
 //        archer.attack();
 
-        WeatherData weatherData = new WeatherData();
-        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
-        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
-        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
-        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+//        WeatherData weatherData = new WeatherData();
+//        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
+//        StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
+//        ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+//        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
+//
+//        weatherData.setMeasurements(80, 65, 30.4f);
+//        weatherData.setMeasurements(82, 70, 29.2f);
+//        weatherData.setMeasurements(78, 90, 29.2f);
 
-        weatherData.setMeasurements(80, 65, 30.4f);
-        weatherData.setMeasurements(82, 70, 29.2f);
-        weatherData.setMeasurements(78, 90, 29.2f);
+        Beverage darkroast = new DarkRoast();
+//        Condiment whippedCream = new WhippedCream(darkroast);
+        Condiment skimmedMilk = new SkimmedMilk(darkroast);
+        System.out.println(skimmedMilk.getDescription());
+
+//        Beverage darkroast2 = new DarkRoast();
+//        System.out.println(darkroast2.cost());
+//        System.out.println(darkroast2.cost());
+//        System.out.println(darkroast.cost());
+
     }
 }
