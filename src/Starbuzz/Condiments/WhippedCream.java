@@ -10,7 +10,7 @@ public class WhippedCream extends Condiment{
     }
 
     public String getDescription(){
-        return beverage.getDescription() + " with Whipped Cream";
+        return beverage.getDescription() + ", Whipped Cream";
     }
 
 }

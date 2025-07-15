@@ -11,6 +11,6 @@ public class Soy extends Condiment{
 
     @Override
     public String getDescription() {
-        return beverage.getDescription() + "with Soy" ;
+        return beverage.getDescription() + ", Soy" ;
     }
 }

@@ -10,6 +10,6 @@ public class SkimmedMilk extends Condiment{
     }
 
     public String getDescription(){
-        return beverage.getDescription() +   " with Skimmed Milk";
+        return beverage.getDescription() +   ", Skimmed Milk";
     }
 }

@@ -1,10 +1,9 @@
 import DuckSimulation.*;
 import Starbuzz.*;
 import Starbuzz.CoffeeBlends.DarkRoast;
+import Starbuzz.CoffeeBlends.Espresso;
 import Starbuzz.CoffeeBlends.HouseBlend;
-import Starbuzz.Condiments.Condiment;
-import Starbuzz.Condiments.SkimmedMilk;
-import Starbuzz.Condiments.WhippedCream;
+import Starbuzz.Condiments.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,19 +51,23 @@ public class Main {
 //        weatherData.setMeasurements(82, 70, 29.2f);
 //        weatherData.setMeasurements(78, 90, 29.2f);
 
-        Beverage darkroast = new DarkRoast();
-        Condiment whippedCream = new WhippedCream(darkroast);
-        Condiment skimmedMilk = new SkimmedMilk(whippedCream);
-        System.out.println(skimmedMilk.cost());
+        Beverage beverage = new Espresso();
+        System.out.println(beverage.getDescription()
+                + " $" + beverage.cost());
 
-        Beverage houseblend = new HouseBlend();
-        Condiment whippedCream2 = new WhippedCream(houseblend);
-        System.out.println(whippedCream2.cost());
+        Beverage beverage2 = new DarkRoast();
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new Mocha(beverage2);
+        beverage2 = new WhippedCream(beverage2);
+        System.out.println(beverage2.getDescription()
+                + " $" + beverage2.cost());
 
-//        Beverage darkroast2 = new DarkRoast();
-//        System.out.println(darkroast2.cost());
-//        System.out.println(darkroast2.cost());
-//        System.out.println(darkroast.cost());
+        Beverage beverage3 = new HouseBlend();
+        beverage3 = new Soy(beverage3);
+        beverage3 = new Mocha(beverage3);
+        beverage3 = new WhippedCream(beverage3);
+        System.out.println(beverage3.getDescription()
+                + " $" + beverage3.cost());
 
     }
 }
