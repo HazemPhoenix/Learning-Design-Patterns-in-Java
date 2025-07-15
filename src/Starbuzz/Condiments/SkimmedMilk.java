@@ -1,4 +1,6 @@
-package Starbuzz;
+package Starbuzz.Condiments;
+
+import Starbuzz.Beverage;
 
 public class SkimmedMilk extends Condiment{
 

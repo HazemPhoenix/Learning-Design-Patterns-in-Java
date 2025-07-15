@@ -1,8 +1,9 @@
 import DuckSimulation.*;
-import MedievalFights.*;
-import MedievalFights.Character;
 import Starbuzz.*;
-import WeatherORama.*;
+import Starbuzz.CoffeeBlends.DarkRoast;
+import Starbuzz.Condiments.Condiment;
+import Starbuzz.Condiments.SkimmedMilk;
+import Starbuzz.Condiments.WhippedCream;
 
 public class Main {
     public static void main(String[] args) {
@@ -51,9 +52,9 @@ public class Main {
 //        weatherData.setMeasurements(78, 90, 29.2f);
 
         Beverage darkroast = new DarkRoast();
-//        Condiment whippedCream = new WhippedCream(darkroast);
-        Condiment skimmedMilk = new SkimmedMilk(darkroast);
-        System.out.println(skimmedMilk.getDescription());
+        Condiment whippedCream = new WhippedCream(darkroast);
+        Condiment skimmedMilk = new SkimmedMilk(whippedCream);
+        System.out.println(skimmedMilk.cost());
 
 //        Beverage darkroast2 = new DarkRoast();
 //        System.out.println(darkroast2.cost());

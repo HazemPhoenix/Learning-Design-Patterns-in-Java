@@ -1,6 +1,8 @@
-package Starbuzz;
+package Starbuzz.Condiments;
 
-public abstract class Condiment extends Beverage{
+import Starbuzz.Beverage;
+
+public abstract class Condiment extends Beverage {
     Beverage beverage;
 
     public Condiment(Beverage b) {
@@ -19,6 +21,6 @@ public abstract class Condiment extends Beverage{
 
     @Override
     public double cost() {
-        return Math.round(getPrice() + beverage.cost() * 100d) / 100d;
+        return Math.round((getPrice() + beverage.cost())* 100d) / 100d;
     }
 }
