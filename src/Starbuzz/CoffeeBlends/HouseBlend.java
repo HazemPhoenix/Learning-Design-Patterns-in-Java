@@ -5,7 +5,7 @@ import Starbuzz.Beverage;
 public class HouseBlend extends Beverage {
 
     public HouseBlend() {
-        setPrice(9.40);
+        setPrice(.89);
         description = "House Blend Coffee";
     }
 }

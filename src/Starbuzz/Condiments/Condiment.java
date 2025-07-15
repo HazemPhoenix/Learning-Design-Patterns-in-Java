@@ -5,10 +5,6 @@ import Starbuzz.Beverage;
 public abstract class Condiment extends Beverage {
     Beverage beverage;
 
-    public Condiment(Beverage b) {
-        beverage = b;
-    }
-
     public void setBeverage(Beverage beverage) {
         this.beverage = beverage;
     }

@@ -5,8 +5,8 @@ import Starbuzz.Beverage;
 public class WhippedCream extends Condiment{
 
     public WhippedCream(Beverage b) {
-        super(b);
-        setPrice(0.30);
+        this.beverage = b;
+        setPrice(.10);
     }
 
     public String getDescription(){

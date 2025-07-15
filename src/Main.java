@@ -1,15 +1,16 @@
 import DuckSimulation.*;
 import Starbuzz.*;
 import Starbuzz.CoffeeBlends.DarkRoast;
+import Starbuzz.CoffeeBlends.HouseBlend;
 import Starbuzz.Condiments.Condiment;
 import Starbuzz.Condiments.SkimmedMilk;
 import Starbuzz.Condiments.WhippedCream;
 
 public class Main {
     public static void main(String[] args) {
-        Duck mallardDuck = new MallardDuck();
-        Duck rubberDuck = new RubberDuck();
-        Duck modelDuck = new ModelDuck();
+//        Duck mallardDuck = new MallardDuck();
+//        Duck rubberDuck = new RubberDuck();
+//        Duck modelDuck = new ModelDuck();
 
 //        mallardDuck.performFly();
 //        rubberDuck.performFly();
@@ -55,6 +56,10 @@ public class Main {
         Condiment whippedCream = new WhippedCream(darkroast);
         Condiment skimmedMilk = new SkimmedMilk(whippedCream);
         System.out.println(skimmedMilk.cost());
+
+        Beverage houseblend = new HouseBlend();
+        Condiment whippedCream2 = new WhippedCream(houseblend);
+        System.out.println(whippedCream2.cost());
 
 //        Beverage darkroast2 = new DarkRoast();
 //        System.out.println(darkroast2.cost());
