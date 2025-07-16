@@ -5,6 +5,8 @@ import Starbuzz.CoffeeBlends.Espresso;
 import Starbuzz.CoffeeBlends.HouseBlend;
 import Starbuzz.Condiments.*;
 
+import java.io.*;
+
 public class Main {
     public static void main(String[] args) throws Exception {
 //        Duck mallardDuck = new MallardDuck();
@@ -66,8 +68,16 @@ public class Main {
         beverage3 = new Soy(beverage3);
         beverage3 = new Mocha(beverage3);
         beverage3 = new WhippedCream(beverage3);
-        System.out.println(beverage3.getDescription()
-                + " $" + beverage3.cost());
+        System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
 
+        InputStream io = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("/home/hazemphoenix/IdeaProjects/HFDesignPatterns/src/test.txt")));
+        int c;
+        while ((c = io.read()) >= 0) {
+            System.out.print((char) c);  // Cast c to char
+        }
+
+        io.close();  // Missing semicolon
     }
 }
+
+
