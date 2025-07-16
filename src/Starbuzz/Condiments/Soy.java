@@ -6,7 +6,9 @@ public class Soy extends Condiment{
 
     public Soy(Beverage b) {
         this.beverage = b;
-        setPrice(.15);
+        price.put(Size.TALL, 0.10);
+        price.put(Size.GRANDE, 0.15);
+        price.put(Size.VENTI, 0.20);
     }
 
     @Override

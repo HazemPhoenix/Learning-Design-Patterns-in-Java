@@ -6,7 +6,7 @@ import Starbuzz.CoffeeBlends.HouseBlend;
 import Starbuzz.Condiments.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 //        Duck mallardDuck = new MallardDuck();
 //        Duck rubberDuck = new RubberDuck();
 //        Duck modelDuck = new ModelDuck();
