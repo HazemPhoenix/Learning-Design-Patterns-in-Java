@@ -1,11 +1,6 @@
-import DuckSimulation.*;
-import Starbuzz.*;
-import Starbuzz.CoffeeBlends.DarkRoast;
-import Starbuzz.CoffeeBlends.Espresso;
-import Starbuzz.CoffeeBlends.HouseBlend;
-import Starbuzz.Condiments.*;
-
-import java.io.*;
+import PizzaFranchise.*;
+import PizzaFranchise.Chicago.ChicagoPizzaStore;
+import PizzaFranchise.NewYork.NYPizzaStore;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -53,30 +48,39 @@ public class Main {
 //        weatherData.setMeasurements(82, 70, 29.2f);
 //        weatherData.setMeasurements(78, 90, 29.2f);
 
-        Beverage beverage = new Espresso();
-        System.out.println(beverage.getDescription()
-                + " $" + beverage.cost());
+//        Beverage beverage = new Espresso();
+//        System.out.println(beverage.getDescription()
+//                + " $" + beverage.cost());
+//
+//        Beverage beverage2 = new DarkRoast();
+//        beverage2 = new Mocha(beverage2);
+//        beverage2 = new Mocha(beverage2);
+//        beverage2 = new WhippedCream(beverage2);
+//        System.out.println(beverage2.getDescription()
+//                + " $" + beverage2.cost());
+//
+//        Beverage beverage3 = new HouseBlend();
+//        beverage3 = new Soy(beverage3);
+//        beverage3 = new Mocha(beverage3);
+//        beverage3 = new WhippedCream(beverage3);
+//        System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
+//
+//        InputStream io = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("/home/hazemphoenix/IdeaProjects/HFDesignPatterns/src/test.txt")));
+//        int c;
+//        while ((c = io.read()) >= 0) {
+//            System.out.print((char) c);
+//        }
+//
+//        io.close();
 
-        Beverage beverage2 = new DarkRoast();
-        beverage2 = new Mocha(beverage2);
-        beverage2 = new Mocha(beverage2);
-        beverage2 = new WhippedCream(beverage2);
-        System.out.println(beverage2.getDescription()
-                + " $" + beverage2.cost());
+        PizzaStore nyStore = new NYPizzaStore();
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-        Beverage beverage3 = new HouseBlend();
-        beverage3 = new Soy(beverage3);
-        beverage3 = new Mocha(beverage3);
-        beverage3 = new WhippedCream(beverage3);
-        System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
+        Pizza pizza = nyStore.orderPizza("cheese");
+        System.out.println("Ethan ordered a " + pizza.getName() + "\n");
 
-        InputStream io = new LowerCaseInputStream(new BufferedInputStream(new FileInputStream("/home/hazemphoenix/IdeaProjects/HFDesignPatterns/src/test.txt")));
-        int c;
-        while ((c = io.read()) >= 0) {
-            System.out.print((char) c);  // Cast c to char
-        }
-
-        io.close();  // Missing semicolon
+        pizza = chicagoStore.orderPizza("cheese");
+        System.out.println("Joel ordered a " + pizza.getName() + "\n");
     }
 }
 
