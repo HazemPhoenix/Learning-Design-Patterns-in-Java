@@ -1,6 +1,7 @@
 import PizzaFranchise.*;
-import PizzaFranchise.Chicago.ChicagoPizzaStore;
-import PizzaFranchise.NewYork.NYPizzaStore;
+import PizzaFranchise.Regions.Chicago.ChicagoPizzaStore;
+import PizzaFranchise.Regions.NewYork.NYPizzaStore;
+import PizzaFranchise.Pizzas.Pizza;
 
 public class Main {
     public static void main(String[] args) throws Exception {
