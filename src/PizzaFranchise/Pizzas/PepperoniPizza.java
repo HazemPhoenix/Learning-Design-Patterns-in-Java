@@ -3,9 +3,8 @@ package PizzaFranchise.Pizzas;
 import PizzaFranchise.Ingredients.PizzaIngredientFactory;
 
 public class PepperoniPizza extends Pizza{
-    public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
-        super(ingredientFactory);
-        setName("Pepperoni Pizza");
+    public PepperoniPizza(PizzaIngredientFactory ingredientFactory, String name) {
+        super(ingredientFactory, name);
     }
 
     @Override

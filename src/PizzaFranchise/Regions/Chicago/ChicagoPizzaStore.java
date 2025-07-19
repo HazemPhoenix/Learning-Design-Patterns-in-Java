@@ -12,17 +12,13 @@ public class ChicagoPizzaStore extends PizzaStore {
         Pizza pizza = null;
 
         if (item.equals("cheese")) {
-            pizza = new CheesePizza(pizzaIngredientFactory);
-            pizza.setName("Chicago Style Cheese Pizza");
+            pizza = new CheesePizza(pizzaIngredientFactory, "Chicago Style Cheese Pizza");
         } else if (item.equals("veggie")) {
-            pizza = new VeggiePizza(pizzaIngredientFactory);
-            pizza.setName("Chicago Style Veggie Pizza");
+            pizza = new VeggiePizza(pizzaIngredientFactory, "Chicago Style Veggie Pizza");
         } else if (item.equals("clam")) {
-            pizza = new ClamPizza(pizzaIngredientFactory);
-            pizza.setName("Chicago Style Clam Pizza");
+            pizza = new ClamPizza(pizzaIngredientFactory, "Chicago Style Clam Pizza");
         } else if (item.equals("pepperoni")) {
-            pizza = new PepperoniPizza(pizzaIngredientFactory);
-            pizza.setName("Chicago Style Pepperoni Pizza");
+            pizza = new PepperoniPizza(pizzaIngredientFactory, "Chicago Style Pepperoni Pizza");
         }
         return pizza;
     }

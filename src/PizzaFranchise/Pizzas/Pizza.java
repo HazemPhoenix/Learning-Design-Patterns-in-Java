@@ -19,8 +19,9 @@ public abstract class Pizza {
     Clam clam;
     PizzaIngredientFactory pizzaIngredientFactory;
 
-    public Pizza(PizzaIngredientFactory pizzaIngredientFactory) {
+    public Pizza(PizzaIngredientFactory pizzaIngredientFactory, String name) {
         this.pizzaIngredientFactory = pizzaIngredientFactory;
+        setName(name);
     }
 
     public void  prepare() {

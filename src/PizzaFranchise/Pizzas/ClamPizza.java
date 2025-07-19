@@ -4,9 +4,8 @@ import PizzaFranchise.Ingredients.PizzaIngredientFactory;
 
 public class ClamPizza extends Pizza{
 
-    public ClamPizza(PizzaIngredientFactory ingredientFactory) {
-        super(ingredientFactory);
-        setName("Clam Pizza");
+    public ClamPizza(PizzaIngredientFactory ingredientFactory, String name) {
+        super(ingredientFactory, name);
     }
 
     @Override
