@@ -1,24 +1,13 @@
 package ChocOHolic;
 
-public class ChocolateBoiler {
-    private static volatile ChocolateBoiler uniqueInstance;
+public enum ChocolateBoiler {
+    UNIQUE_INSTANCE;
     private boolean isEmpty;
     private boolean isBoiled;
 
     private ChocolateBoiler(){
         isBoiled = false;
         isEmpty = true;
-    }
-
-    public static ChocolateBoiler getInstance() {
-        if(uniqueInstance == null) {
-            synchronized (ChocolateBoiler.class) {
-                if(uniqueInstance == null) {
-                    uniqueInstance = new ChocolateBoiler();
-                }
-            }
-        }
-        return uniqueInstance;
     }
 
     public boolean isEmpty() {
