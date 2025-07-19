@@ -1,3 +1,4 @@
+import ChocOHolic.ChocolateBoiler;
 import PizzaFranchise.*;
 import PizzaFranchise.Regions.Chicago.ChicagoPizzaStore;
 import PizzaFranchise.Regions.NewYork.NYPizzaStore;
@@ -74,14 +75,25 @@ public class Main {
 //
 //        io.close();
 
-        PizzaStore nyStore = new NYPizzaStore();
-        PizzaStore chicagoStore = new ChicagoPizzaStore();
+//        PizzaStore nyStore = new NYPizzaStore();
+//        PizzaStore chicagoStore = new ChicagoPizzaStore();
+//
+//        Pizza pizza = nyStore.orderPizza("cheese");
+//        System.out.println("Ethan ordered a " + pizza.getName() + "\n");
+//
+//        pizza = chicagoStore.orderPizza("cheese");
+//        System.out.println("Joel ordered a " + pizza.getName() + "\n");
 
-        Pizza pizza = nyStore.orderPizza("cheese");
-        System.out.println("Ethan ordered a " + pizza.getName() + "\n");
-
-        pizza = chicagoStore.orderPizza("cheese");
-        System.out.println("Joel ordered a " + pizza.getName() + "\n");
+        ChocolateBoiler chocolateBoiler = ChocolateBoiler.getInstance();
+        System.out.println("isEmpty before filling: " + chocolateBoiler.isEmpty());
+        chocolateBoiler.fill();
+        System.out.println("isEmpty after filling: " + chocolateBoiler.isEmpty());
+        System.out.println("isBoiled before boiling: " + chocolateBoiler.isBoiled());
+        chocolateBoiler.boil();
+        System.out.println("isBoiled After boiling: " + chocolateBoiler.isBoiled());
+        chocolateBoiler.drain();
+        System.out.println("isEmpty after draining: " + chocolateBoiler.isEmpty());
+        System.out.println("isBoiled After draining: " + chocolateBoiler.isBoiled());
     }
 }
 
