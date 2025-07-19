@@ -2,13 +2,8 @@ package ChocOHolic;
 
 public enum ChocolateBoiler {
     UNIQUE_INSTANCE;
-    private boolean isEmpty;
-    private boolean isBoiled;
-
-    private ChocolateBoiler(){
-        isBoiled = false;
-        isEmpty = true;
-    }
+    private boolean isEmpty = true;
+    private boolean isBoiled = false;
 
     public boolean isEmpty() {
         return isEmpty;
