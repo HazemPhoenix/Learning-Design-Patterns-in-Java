@@ -1,8 +1,14 @@
-import ChocOHolic.ChocolateBoiler;
-import PizzaFranchise.*;
-import PizzaFranchise.Regions.Chicago.ChicagoPizzaStore;
-import PizzaFranchise.Regions.NewYork.NYPizzaStore;
-import PizzaFranchise.Pizzas.Pizza;
+import SmartHome.*;
+import SmartHome.Garage.GarageDoor;
+import SmartHome.Garage.GarageDoorCloseCommand;
+import SmartHome.Garage.GarageDoorOpenCommand;
+import SmartHome.Lights.Light;
+import SmartHome.Lights.LightOffCommand;
+import SmartHome.Lights.LightOnCommand;
+import SmartHome.Stereos.Stereo;
+import SmartHome.Stereos.StereoOffCommand;
+import SmartHome.Stereos.StereoOnWithCDCommand;
+import SmartHome.Stereos.StereoOnWithDVDCommand;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -84,15 +90,72 @@ public class Main {
 //        pizza = chicagoStore.orderPizza("cheese");
 //        System.out.println("Joel ordered a " + pizza.getName() + "\n");
 
-        ChocolateBoiler chocolateBoiler = ChocolateBoiler.UNIQUE_INSTANCE;
-        System.out.println("isEmpty before filling: " + chocolateBoiler.isEmpty());
-        chocolateBoiler.fill();
-        System.out.println("isEmpty after filling: " + chocolateBoiler.isEmpty());
-        System.out.println("isBoiled before boiling: " + chocolateBoiler.isBoiled());
-        chocolateBoiler.boil();
-        System.out.println("isBoiled After boiling: " + chocolateBoiler.isBoiled());
-        chocolateBoiler.drain();
-        System.out.println("isEmpty after draining: " + chocolateBoiler.isEmpty());
-        System.out.println("isBoiled After draining: " + chocolateBoiler.isBoiled());
+//        ChocolateBoiler chocolateBoiler = ChocolateBoiler.UNIQUE_INSTANCE;
+//        System.out.println("isEmpty before filling: " + chocolateBoiler.isEmpty());
+//        chocolateBoiler.fill();
+//        System.out.println("isEmpty after filling: " + chocolateBoiler.isEmpty());
+//        System.out.println("isBoiled before boiling: " + chocolateBoiler.isBoiled());
+//        chocolateBoiler.boil();
+//        System.out.println("isBoiled After boiling: " + chocolateBoiler.isBoiled());
+//        chocolateBoiler.drain();
+//        System.out.println("isEmpty after draining: " + chocolateBoiler.isEmpty());
+//        System.out.println("isBoiled After draining: " + chocolateBoiler.isBoiled());
+
+
+        RemoteControl remoteControl = new RemoteControl();
+
+        Light livingRoomLight = new Light("Living Room");
+        Light kitchenLight = new Light("Kitchen");
+        GarageDoor garageDoor = new GarageDoor("Garage");
+        Stereo stereo = new Stereo("Living Room");
+        Stereo stereo2 = new Stereo("Bedroom Room");
+
+        LightOnCommand livingRoomLightOn =
+                new LightOnCommand(livingRoomLight);
+        LightOffCommand livingRoomLightOff =
+                new LightOffCommand(livingRoomLight);
+        LightOnCommand kitchenLightOn =
+                new LightOnCommand(kitchenLight);
+        LightOffCommand kitchenLightOff =
+                new LightOffCommand(kitchenLight);
+
+        GarageDoorOpenCommand garageDoorUp =
+                new GarageDoorOpenCommand(garageDoor);
+        GarageDoorCloseCommand garageDoorDown =
+                new GarageDoorCloseCommand(garageDoor);
+
+        StereoOnWithCDCommand stereoOnWithCD =
+                new StereoOnWithCDCommand(stereo);
+        StereoOffCommand stereoOff =
+                new StereoOffCommand(stereo);
+
+        StereoOnWithDVDCommand stereoOnWithDVDCommand = new StereoOnWithDVDCommand(stereo2);
+        StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo2);
+
+        remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+        remoteControl.setCommand(2, stereoOnWithCD, stereoOff);
+        remoteControl.setCommand(3, stereoOnWithDVDCommand, stereoOffCommand);
+        remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
+
+
+//        remoteControl.setCommand(0, () -> livingRoomLight.on(), () -> livingRoomLight.off());
+//        remoteControl.setCommand(1, () -> kitchenLight.on(), () -> kitchenLight.off());
+//        remoteControl.setCommand(2, () -> stereo.on(), () -> stereo.off());
+//        remoteControl.setCommand(3, () -> stereo2.on(), () -> stereo2.off());
+
+        System.out.println(remoteControl);
+
+        remoteControl.pressOnButton(0);
+        remoteControl.pressOffButton(0);
+        remoteControl.pressOnButton(1);
+        remoteControl.pressOffButton(1);
+        remoteControl.pressOnButton(2);
+        remoteControl.pressOffButton(2);
+        remoteControl.pressOnButton(3);
+        remoteControl.pressOffButton(3);
+        remoteControl.pressOnButton(4);
+        remoteControl.pressOffButton(4);
+        remoteControl.pressUndoButton();
     }
 }
