@@ -1,3 +1,4 @@
+import Adapter.*;
 import SmartHome.*;
 import SmartHome.Garage.GarageDoor;
 import SmartHome.Garage.GarageDoorCloseCommand;
@@ -9,6 +10,12 @@ import SmartHome.Stereos.Stereo;
 import SmartHome.Stereos.StereoOffCommand;
 import SmartHome.Stereos.StereoOnWithCDCommand;
 import SmartHome.Stereos.StereoOnWithDVDCommand;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -144,18 +151,53 @@ public class Main {
 //        remoteControl.setCommand(2, () -> stereo.on(), () -> stereo.off());
 //        remoteControl.setCommand(3, () -> stereo2.on(), () -> stereo2.off());
 
-        System.out.println(remoteControl);
+//        System.out.println(remoteControl);
+//
+//        remoteControl.pressOnButton(0);
+//        remoteControl.pressOffButton(0);
+//        remoteControl.pressOnButton(1);
+//        remoteControl.pressOffButton(1);
+//        remoteControl.pressOnButton(2);
+//        remoteControl.pressOffButton(2);
+//        remoteControl.pressOnButton(3);
+//        remoteControl.pressOffButton(3);
+//        remoteControl.pressOnButton(4);
+//        remoteControl.pressOffButton(4);
+//        remoteControl.pressUndoButton();
 
-        remoteControl.pressOnButton(0);
-        remoteControl.pressOffButton(0);
-        remoteControl.pressOnButton(1);
-        remoteControl.pressOffButton(1);
-        remoteControl.pressOnButton(2);
-        remoteControl.pressOffButton(2);
-        remoteControl.pressOnButton(3);
-        remoteControl.pressOffButton(3);
-        remoteControl.pressOnButton(4);
-        remoteControl.pressOffButton(4);
-        remoteControl.pressUndoButton();
+        Duck mallardDuck = new MallardDuck();
+        Turkey wildTurkey = new WildTurkey();
+        Duck turkeyAdapter = new TurkeyAdapter(wildTurkey);
+
+        System.out.println("The turkey says");
+        wildTurkey.gobble();
+        wildTurkey.fly();
+        System.out.println("The duck says");
+        testDuck(mallardDuck);
+        System.out.println("The turkey adapter says");
+        testDuck(turkeyAdapter);
+
+        System.out.println("---------------");
+
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Cherry");
+        fruits.add("Peach");
+        fruits.add("Watermelon");
+
+        Iterator<?> iterator = fruits.iterator();
+
+        Enumeration<Object> enumeration = new IteratorEnumeration(iterator);
+
+        while (enumeration.hasMoreElements()) {
+            Object element = enumeration.nextElement();
+            System.out.println(element);
+        }
+    }
+
+    static void testDuck(Duck duck) {
+        duck.quack();
+        duck.fly();
     }
 }
